@@ -33,7 +33,8 @@ The following endpoints are available:
 
 - `GET /cashcards/{requestedId}`: Retrieves a specific cash card by ID.
 - `POST /cashcards`: Creates a new cash card.
-- `GET /cashcards`: Retrieves all cash cards.
+- `GET /cashcards`: Retrieves all cash cards by owner.
+- `PUT /cashcards/{requestedId}`: Updates an existing cash card.
 
 ## Developments
 1) Generated the Spring Boot codebase that will be used for Family Cash Card API by using Spring Initializr.
@@ -44,3 +45,5 @@ The following endpoints are available:
 6) Added a GET endpoint for a list implementing pagination and sorting with default behavior.
 7) Configured Spring Security Basic Authentication and RBAC-based Authorization to ensure that only authenticated, authorized users have access to the API.
 8) Updated Repository to support filtering by the owner and used in Controller to enhance security by ensuring only the correct Cash Card owner can create and own Cash Cards.
+9) Added a PUT endpoint that allows an authenticated, authorized owner to update their Cash Card. 
+10) Refactored the Controller code without changing its functionality.
