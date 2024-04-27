@@ -14,7 +14,6 @@ It is built with Gradle and includes the following dependencies:
   - Spring Web
   - Spring Data JDBC
   - H2 Database 
-  - Spring Security
 
 ## Testing
 
@@ -42,5 +41,3 @@ The following endpoints are available:
 4) Refactored the way the Family Cash Card API manage its data. Spring Data is now creating an in-memory H2 database and loading it with test data.
 5) Added POST endpoint to create and save a new CashCard to the database using Spring Data and implementing the HTTP POST specification.
 6) Added a GET endpoint for a list implementing pagination and sorting with default behavior.
-7) Configured Spring Security Basic Authentication and RBAC-based Authorization to ensure that only authenticated, authorized users have access to the API.
-8) Updated Repository to support filtering by the owner and used in Controller to enhance security by ensuring only the correct Cash Card owner can create and own Cash Cards.

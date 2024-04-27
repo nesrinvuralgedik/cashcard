@@ -23,14 +23,14 @@ class CashCardJsonTest {
     @BeforeEach
     void setUp(){
         cashCards = Arrays.array(
-                new CashCard(99L, 123.45, "nes1"),
-                new CashCard(100L, 1.00, "nes1"),
-                new CashCard(101L, 150.00, "nes1"));
+                new CashCard(99L, 123.45),
+                new CashCard(100L, 1.00),
+                new CashCard(101L, 150.00));
     }
 
     @Test
     void cashCardSerializationTest() throws IOException {
-        CashCard cashCard = new CashCard(99L, 123.45, "nes1");
+        CashCard cashCard = new CashCard(99L, 123.45);
         assertThat(json.write(cashCard)).isStrictlyEqualToJson("single.json");
         assertThat(json.write(cashCard)).hasJsonPathNumberValue("@.id");
         assertThat(json.write(cashCard)).extractingJsonPathNumberValue("@.id").isEqualTo(99);
@@ -43,11 +43,10 @@ class CashCardJsonTest {
         String expected = """
            {
                "id":99,
-               "amount":123.45,
-               "owner": "nes1"
+               "amount":123.45
            }
            """;
-        assertThat(json.parse(expected)).isEqualTo(new CashCard(99L, 123.45, "nes1"));
+        assertThat(json.parse(expected)).isEqualTo(new CashCard(99L, 123.45));
         assertThat(json.parseObject(expected).id()).isEqualTo(99);
         assertThat(json.parseObject(expected).amount()).isEqualTo(123.45);
     }
@@ -61,9 +60,9 @@ class CashCardJsonTest {
     void cashCardListDeserializationList() throws IOException {
         String expected = """
                 [
-                    {"id": 99, "amount": 123.45, "owner": "nes1"},
-                    {"id": 100, "amount": 1.00, "owner": "nes1"},
-                    {"id": 101, "amount": 150.00, "owner": "nes1"}
+                    {"id": 99, "amount": 123.45},
+                    {"id": 100, "amount": 1.00},
+                    {"id": 101, "amount": 150.00}
                 ]
                 """;
 
