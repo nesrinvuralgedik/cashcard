@@ -35,6 +35,7 @@ The following endpoints are available:
 - `POST /cashcards`: Creates a new cash card.
 - `GET /cashcards`: Retrieves all cash cards by owner.
 - `PUT /cashcards/{requestedId}`: Updates an existing cash card.
+- `DELETE /cashcards/{id}`: Deletes a cash card by ID.
 
 ## Developments
 1) Generated the Spring Boot codebase that will be used for Family Cash Card API by using Spring Initializr.
@@ -47,3 +48,4 @@ The following endpoints are available:
 8) Updated Repository to support filtering by the owner and used in Controller to enhance security by ensuring only the correct Cash Card owner can create and own Cash Cards.
 9) Added a PUT endpoint that allows an authenticated, authorized owner to update their Cash Card. 
 10) Refactored the Controller code without changing its functionality.
+11) Added a DELETE endpoint by implementing a hard delete which doesn't reveal information about existing records to unauthorized users.
