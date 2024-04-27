@@ -16,9 +16,6 @@ It is built with Gradle and includes the following dependencies:
   - H2 Database 
 
 ## Testing
-
-Used TDD (Test Driven Development).
-
 Unit tests are available in the `src/test` directory.
 
 ## Usage
@@ -31,11 +28,9 @@ Make sure to replace `localhost:8080` with the appropriate hostname and port if 
 The following endpoints are available:
 
 - `GET /cashcards/{requestedId}`: Retrieves a specific cash card by ID.
-- `POST /cashcards`: Creates a new cash card.
 
 ## Developments
 1) Generated the Spring Boot codebase that will be used for Family Cash Card API by using Spring Initializr.
 2) Used TDD to test a JSON data contract and JSON deserialization for the Cash Card service.
 3) Created first Family Cash Card REST endpoint: a GET that returns a CashCard of a certain ID using test driven development.
 4) Refactored the way the Family Cash Card API manage its data. Spring Data is now creating an in-memory H2 database and loading it with test data.
-5) Added POST endpoint to create and save a new CashCard to the database using Spring Data and implementing the HTTP POST specification.
