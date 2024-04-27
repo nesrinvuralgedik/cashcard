@@ -44,13 +44,7 @@ class SecurityConfig {
                 .roles("NON-OWNER") // new role
                 .build();
 
-        UserDetails yas = users
-                .username("yas2")
-                .password(passwordEncoder.encode("xyz789"))
-                .roles("CARD-OWNER")
-                .build();
-
-        return new InMemoryUserDetailsManager(nes, jackOwnsNoCards, yas);
+        return new InMemoryUserDetailsManager(nes, jackOwnsNoCards);
     }
 
     @Bean
