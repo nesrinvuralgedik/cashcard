@@ -36,7 +36,7 @@ class CashCardApplicationTests {
 		assertThat(id).isEqualTo(99);
 
 		Double amount = documentContext.read("$.amount");
-		assertThat(amount).isEqualTo(123.45);
+		assertThat(amount).isEqualTo(123.46);
 	}
 
 	@Test
