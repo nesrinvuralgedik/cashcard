@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping("/cashcards")
 class CashCardController {
     private final CashCardRepository cashCardRepository;
-    private CashCardController(CashCardRepository cashCardRepository) {
+    public CashCardController(CashCardRepository cashCardRepository) {
         this.cashCardRepository = cashCardRepository;
     }
     @GetMapping("/{requestedId}")
-    private ResponseEntity<CashCard> findById(@PathVariable Long requestedId, Principal principal) {
+    public ResponseEntity<CashCard> findById(@PathVariable Long requestedId, Principal principal) {
         CashCard cashCard = findCashCard(requestedId, principal);
         if (cashCard != null){
             return ResponseEntity.ok(cashCard);
